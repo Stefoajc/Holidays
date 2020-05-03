@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Holidays.API</name>
+    </assembly>
+    <members>
+        <member name="M:Holidays.API.Controllers.HolidaysController.GetHolidays(System.Int32)">
+            <summary>
+            Get all holidays for the passed year ordered by date
+            </summary>
+            <param name="year">year</param>
+            <returns> 
+            - 200 with all holidays
+            </returns>
+            
+            GET: /api/holidays/{year}
+        </member>
+        <member name="M:Holidays.API.Controllers.HolidaysController.GetHolidays(System.Int32,System.Int32)">
+            <summary>
+            Get all holidays for the passed month ordered by date
+            </summary>
+            <param name="year">>0</param>
+            <param name="month">1-12</param>
+            <returns> 
+            - 200 with all holidays
+            </returns>
+            
+            GET: /api/holidays/{year}/{month}
+        </member>
+        <member name="M:Holidays.API.Controllers.HolidaysController.GetNextHoliday(System.DateTime)">
+            <summary>
+            Get next holiday after specific date
+            </summary>
+            <param name="date">yyyy-MM-dd</param>
+            <returns> 
+            - 200 with information about next holiday
+            </returns>
+            
+            GET: /api/holidays/{yyyy-MM-dd}/next
+        </member>
+        <member name="M:Holidays.API.Controllers.HolidaysController.GetNextHoliday">
+            <summary>
+            Get next holiday after specific date
+            </summary>
+            <returns> 
+            - 200 with information about next holiday
+            </returns>
+            
+            GET: /api/holidays/next
+        </member>
+        <member name="M:Holidays.API.Controllers.HolidaysController.GetHoliday(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get information for the passed date
+            </summary>
+            <param name="dayOfMonth">day of month</param>
+            <param name="month">month</param>
+            <param name="year">year</param>
+            <returns> 
+            - 200 with information about the passed date 
+            - 204 when no information is found
+            - 400 when input data is not valid
+            </returns>
+            
+            GET: /api/holidays/2020/1/20/information
+        </member>
+        <member name="M:Holidays.API.Controllers.HolidaysController.GetHoliday(System.DateTime)">
+            <summary>
+            Get information for the passed date
+            </summary>
+            <param name="date">Date to check format (yyyy-MM-dd)</param>
+            <returns> 
+            - 200 with information about the passed date 
+            - 204 when no information is found
+            - 400 when input data is not valid
+            </returns>
+            
+            GET: /api/holidays/2020-01-21/information
+        </member>
+        <member name="M:Holidays.API.Controllers.HolidaysController.IsHoliday(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Check if the passed date information is holiday
+            </summary>
+            <param name="dayOfMonth">day of month</param>
+            <param name="month">month</param>
+            <param name="year">year</param>
+            <returns> True | False </returns>
+            
+            GET: /api/holidays/6/5/2020/is-holiday
+        </member>
+        <member name="M:Holidays.API.Controllers.HolidaysController.IsHoliday(System.DateTime)">
+            <summary>
+            Check if the passed date information is holiday
+            </summary>
+            <param name="date">yyyy-MM-dd</param>
+            <returns> True | False </returns>
+            
+            GET: /api/holidays/2020-06-22/is-holiday
+        </member>
+        <member name="T:Holidays.API.Models.ConstantHoliday">
+            <summary>
+            Name days, National holidays, etc.
+            </summary>
+        </member>
+        <member name="T:Holidays.API.Models.FloatingHoliday">
+            <summary>
+            Like Easter
+            Palm day
+            Whit day
+            Good Friday
+            Ascension Day
+            </summary>
+        </member>
+        <member name="P:Holidays.API.OutputModel.HolidayOutputModel.Date">
+            <summary>
+            Date of the Holdiay (format: yyyy-MM-dd)
+            </summary>
+        </member>
+    </members>
+</doc>
